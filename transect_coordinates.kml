@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="transect_coordinates" id="transect_coordinates">
+	<SimpleField name="id" type="string"></SimpleField>
+	<SimpleField name="Coordinate type" type="string"></SimpleField>
+	<SimpleField name="Latitude" type="float"></SimpleField>
+	<SimpleField name="Longitude" type="float"></SimpleField>
+</Schema>
+<Folder><name>transect_coordinates</name>
+  <Placemark>
+	<name>Casabito_1</name>
+	<description>Start coordinate</description>
+	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
+		<SimpleData name="id">19.04005254</SimpleData>
+		<SimpleData name="Coordinate type">-70.51738724000001</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-70.51738724,19.04005254</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Casabito_1</name>
+	<description>Final coordinate</description>
+	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
+		<SimpleData name="id">19.04054823</SimpleData>
+		<SimpleData name="Coordinate type">-70.51721927</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-70.51721927,19.04054823</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Casabito_2</name>
+	<description>Start coordinate</description>
+	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
+		<SimpleData name="id">19.04031718</SimpleData>
+		<SimpleData name="Coordinate type">-70.51799744</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-70.51799744,19.04031718</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Casabito_2</name>
+	<description>Final coordinate</description>
+	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
+		<SimpleData name="id">19.04021988</SimpleData>
+		<SimpleData name="Coordinate type">-70.51789518</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-70.51789518,19.04021988</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Casabito_3</name>
+	<description>Start coordinate</description>
+	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
+		<SimpleData name="id">19.03977776</SimpleData>
+		<SimpleData name="Coordinate type">-70.51779661</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-70.51779661,19.03977776</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Casabito_3</name>
+	<description>Final coordinate</description>
+	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
+		<SimpleData name="id">19.03988932</SimpleData>
+		<SimpleData name="Coordinate type">-70.51778253000001</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-70.51778253,19.03988932</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Manaclar_4</name>
+	<description>Start coordinate</description>
+	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
+		<SimpleData name="id">19.03840638</SimpleData>
+		<SimpleData name="Coordinate type">-70.52811004</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-70.52811004,19.03840638</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Manaclar_4</name>
+	<description>Final coordinate</description>
+	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
+		<SimpleData name="id">19.03843075595</SimpleData>
+		<SimpleData name="Coordinate type">-70.5282180465</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-70.5282180465,19.03843075595</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Manaclar_5</name>
+	<description>Start coordinate</description>
+	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
+		<SimpleData name="id">19.03907734</SimpleData>
+		<SimpleData name="Coordinate type">-70.53011164</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-70.53011164,19.03907734</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Manaclar_5</name>
+	<description>Final coordinate</description>
+	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
+		<SimpleData name="id">19.03930838</SimpleData>
+		<SimpleData name="Coordinate type">-70.53025782</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-70.53025782,19.03930838</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Manaclar_6</name>
+	<description>Start coordinate</description>
+	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
+		<SimpleData name="id">19.03900317</SimpleData>
+		<SimpleData name="Coordinate type">-70.52989807</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-70.52989807,19.03900317</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Manaclar_6</name>
+	<description>Final coordinate</description>
+	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
+		<SimpleData name="id">19.03903614</SimpleData>
+		<SimpleData name="Coordinate type">-70.53001273</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-70.53001273,19.03903614</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Arroyazo_7</name>
+	<description>Start coordinate</description>
+	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
+		<SimpleData name="id">19.03620841</SimpleData>
+		<SimpleData name="Coordinate type">-70.54296244</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-70.54296244,19.03620841</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Arroyazo_7</name>
+	<description>Final coordinate</description>
+	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
+		<SimpleData name="id">19.03642805</SimpleData>
+		<SimpleData name="Coordinate type">-70.54266203</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-70.54266203,19.03642805</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Arroyazo_8</name>
+	<description>Start coordinate</description>
+	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
+		<SimpleData name="id">19.03632124</SimpleData>
+		<SimpleData name="Coordinate type">-70.54255173</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-70.54255173,19.03632124</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Arroyazo_8</name>
+	<description>Final coordinate</description>
+	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
+		<SimpleData name="id">19.03634977</SimpleData>
+		<SimpleData name="Coordinate type">-70.54218091</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-70.54218091,19.03634977</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Arroyazo_9</name>
+	<description>Start coordinate</description>
+	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
+		<SimpleData name="id">19.03639826</SimpleData>
+		<SimpleData name="Coordinate type">-70.54209173</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-70.54209173,19.03639826</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Arroyazo_9</name>
+	<description>Final coordinate</description>
+	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
+		<SimpleData name="id">19.03664738</SimpleData>
+		<SimpleData name="Coordinate type">-70.54228686</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-70.54228686,19.03664738</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>
