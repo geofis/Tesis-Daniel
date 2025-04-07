@@ -236,6 +236,8 @@ acumulacion_especies_grupos
 
 ## Asociación con variables ambientales
 
+¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡WIP-PENDIENTE!!!!!!!!!!!!!!!!!!!!
+
 Retomando idea compartida por correo:
 
 > ...se podría explorar, aun siendo pocos transectos (ya sé que en terreno tres transectos por formación es mucho, pero estadísticamente es poco), asociación con variables geomorfológicas, distancia a cursos fluviales, litología, cubierta y altura de dosel, elevación y variables climáticas. Lógicamente, para esto, sería necesario disponer de las coordenadas de los transectos.

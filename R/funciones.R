@@ -79,13 +79,14 @@ seleccionar_y_cortar_arbol <- function(arbol_upgma, arbol_ward,
 
 estilo_kable <- function(df, titulo = '', cubre_anchura = F, nombres_filas = F, alinear = NULL) {
   df %>% kable(
-    # format = 'html',
+    # format = 'latex',
     escape = F, booktabs = T, align = alinear,
     digits = 2, caption = titulo, row.names = nombres_filas) %>%
     kable_styling(bootstrap_options = c("hover", "condensed"),
                   latex_options = "HOLD_position",
                   full_width = cubre_anchura, position = "center") %>% 
-    gsub(' NA ', '', .)
+    gsub(' NA ', '', .) %>% 
+    gsub('_', '\\\\_', .)
 }
 
 estilo_kable_corto <- function(df, titulo = '', cubre_anchura = F, nombres_filas = F) {
