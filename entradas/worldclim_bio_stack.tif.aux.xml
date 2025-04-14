@@ -1,0 +1,110 @@
+<PAMDataset>
+  <PAMRasterBand band="1">
+    <Description>bio01 Annual mean temperature</Description>
+    <Histograms>
+      <HistItem>
+        <HistMin>161.8923913043478</HistMin>
+        <HistMax>261.1076086956522</HistMax>
+        <BucketCount>460</BucketCount>
+        <IncludeOutOfRange>0</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>1|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|2|0|0|0|0|0|0|0|0|2|0|0|0|1|0|0|0|0|1|0|0|0|0|4|0|0|0|4|0|0|0|0|5|0|0|0|0|6|0|0|0|7|0|0|0|0|8|0|0|0|0|7|0|0|0|11|0|0|0|0|3|0|0|0|6|0|0|0|0|7|0|0|0|0|8|0|0|0|18|0|0|0|0|11|0|0|0|0|16|0|0|0|10|0|0|0|0|13|0|0|0|0|15|0|0|0|15|0|0|0|0|19|0|0|0|7|0|0|0|0|6|0|0|0|0|6|0|0|0|6|0|0|0|0|2|0|0|0|0|9|0|0|0|3|0|0|0|0|6|0|0|0|0|3|0|0|0|4|0|0|0|0|2|0|0|0|4|0|0|0|0|7|0|0|0|0|2|0|0|0|6|0|0|0|0|2|0|0|0|0|2|0|0|0|4|0|0|0|0|3|0|0|0|0|4|0|0|0|1|0|0|0|0|3|0|0|0|3|0|0|0|0|3|0|0|0|0|4|0|0|0|4|0|0|0|0|7|0|0|0|0|5|0|0|0|3|0|0|0|0|9|0|0|0|0|5|0|0|0|6|0|0|0|0|1|0|0|0|8|0|0|0|0|9|0|0|0|0|15|0|0|0|26|0|0|0|0|12|0|0|0|0|9|0|0|0|4|0|0|0|0|8|0|0|0|0|4|0|0|0|3|0|0|0|0|3|0|0|0|0|0|0|0|0|6|0|0|0|0|4|0|0|0|2|0|0|0|0|3|0|0|0|0|1|0|0|0|3|0|0|0|0|1|0|0|0|0|2|0|0|0|1|0|0|0|0|1|0|0|0|2|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|1|0|0|0|0|1|0|0|0|1|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|1|0|0|0|0|1|0|0|0|0|0|0|0|0|2|0|0|0|0|3</HistCounts>
+      </HistItem>
+    </Histograms>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">261</MDI>
+      <MDI key="STATISTICS_MEAN">203.87370600414</MDI>
+      <MDI key="STATISTICS_MINIMUM">162</MDI>
+      <MDI key="STATISTICS_STDDEV">22.550486081178</MDI>
+      <MDI key="STATISTICS_VALID_PERCENT">100</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="2">
+    <Description>bio02 Mean diurnal range mean of monthly max temp - min temp</Description>
+    <Histograms>
+      <HistItem>
+        <HistMin>104.9728260869565</HistMin>
+        <HistMax>130.0271739130435</HistMax>
+        <BucketCount>460</BucketCount>
+        <IncludeOutOfRange>0</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>3|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|4|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|2|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|3|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|2|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|5|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|7|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|7|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|11|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|24|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|34|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|19|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|13|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|12|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|5|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|10|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|19|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|9|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|2|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|8|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|14|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|26|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|74|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|110|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|59|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1</HistCounts>
+      </HistItem>
+    </Histograms>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">130</MDI>
+      <MDI key="STATISTICS_MEAN">122.79710144928</MDI>
+      <MDI key="STATISTICS_MINIMUM">105</MDI>
+      <MDI key="STATISTICS_STDDEV">6.4294412016669</MDI>
+      <MDI key="STATISTICS_VALID_PERCENT">100</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="3">
+    <Description>bio03 Isothermality bio02 div/bio07</Description>
+    <Histograms>
+      <HistItem>
+        <HistMin>68.99239130434782</HistMin>
+        <HistMax>76.00760869565218</HistMax>
+        <BucketCount>460</BucketCount>
+        <IncludeOutOfRange>0</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>4|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|27|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|84|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|37|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|41|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|28|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|135|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|127</HistCounts>
+      </HistItem>
+    </Histograms>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">76</MDI>
+      <MDI key="STATISTICS_MEAN">73.780538302277</MDI>
+      <MDI key="STATISTICS_MINIMUM">69</MDI>
+      <MDI key="STATISTICS_STDDEV">2.0835235822241</MDI>
+      <MDI key="STATISTICS_VALID_PERCENT">100</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="4">
+    <Description>bio04 Temperature seasonality Standard deviation times 100</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="5">
+    <Description>bio05 Max temperature of warmest month</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="6">
+    <Description>bio06 Min temperature of coldest month</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="7">
+    <Description>bio07 Temperature annual range bio05-bio06</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="8">
+    <Description>bio08 Mean temperature of wettest quarter</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="9">
+    <Description>bio09 Mean temperature of driest quarter</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="10">
+    <Description>bio10 Mean temperature of warmest quarter</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="11">
+    <Description>bio11 Mean temperature of coldest quarter</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="12">
+    <Description>bio12 Annual precipitation</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="13">
+    <Description>bio13 Precipitation of wettest month</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="14">
+    <Description>bio14 Precipitation of driest month</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="15">
+    <Description>bio15 Precipitation seasonality</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="16">
+    <Description>bio16 Precipitation of wettest quarter</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="17">
+    <Description>bio17 Precipitation of driest quarter</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="18">
+    <Description>bio18 Precipitation of warmest quarter</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="19">
+    <Description>bio19 Precipitation of coldest quarter</Description>
+  </PAMRasterBand>
+</PAMDataset>

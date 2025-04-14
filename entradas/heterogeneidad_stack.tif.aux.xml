@@ -1,0 +1,98 @@
+<PAMDataset>
+  <PAMRasterBand band="1">
+    <Description>coefficient_of_variation_1km</Description>
+    <Histograms>
+      <HistItem>
+        <HistMin>76.54761904761905</HistMin>
+        <HistMax>1482.452380952381</HistMax>
+        <BucketCount>483</BucketCount>
+        <IncludeOutOfRange>0</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|1|2|1|0|0|0|0|2|1|1|1|1|0|1|2|2|3|3|1|2|5|5|2|6|3|3|1|2|7|3|7|5|1|4|6|2|4|6|5|3|4|8|8|6|8|4|2|9|6|3|1|2|2|7|4|2|5|8|2|4|7|1|7|5|8|4|2|3|2|6|6|8|0|2|2|6|7|0|3|8|6|8|2|5|5|3|6|4|6|3|3|1|2|2|2|3|1|5|3|2|2|2|2|7|3|4|2|4|2|2|0|0|0|2|1|0|2|3|2|0|1|1|0|4|3|0|4|2|2|1|2|0|1|0|3|1|1|1|1|0|0|1|0|0|0|1|1|0|2|0|0|0|1|0|2|1|4|0|1|0|2|0|0|3|1|0|0|0|1|0|1|0|0|1|1|1|0|0|0|1|0|0|1|0|1|1|0|1|1|1|0|0|1|0|0|2|0|0|0|0|1|0|0|0|0|0|1|0|2|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|1|0|0|0|2|1|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|1|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|1|1|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1</HistCounts>
+      </HistItem>
+    </Histograms>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">1481</MDI>
+      <MDI key="STATISTICS_MEAN">377.94202898551</MDI>
+      <MDI key="STATISTICS_MINIMUM">78</MDI>
+      <MDI key="STATISTICS_STDDEV">168.94647600123</MDI>
+      <MDI key="STATISTICS_VALID_PERCENT">100</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="2">
+    <Description>contrast_1km</Description>
+    <Histograms>
+      <HistItem>
+        <HistMin>5253.633540372671</HistMin>
+        <HistMax>466376.3664596273</HistMax>
+        <BucketCount>483</BucketCount>
+        <IncludeOutOfRange>0</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>1|0|1|0|1|1|3|0|5|3|1|2|6|3|8|8|8|5|5|3|5|5|9|12|6|7|7|11|8|16|9|6|4|10|5|17|8|10|7|7|10|9|6|6|5|6|3|0|5|5|4|4|3|4|4|4|5|3|2|3|3|8|2|4|1|1|2|4|3|3|1|3|2|2|0|0|3|3|1|3|1|3|5|2|4|6|3|1|0|2|1|1|0|1|2|1|3|3|1|2|1|2|1|0|1|1|1|0|2|2|1|1|0|1|2|0|1|2|0|0|1|3|1|1|0|2|0|0|0|0|1|0|1|0|0|2|0|0|0|0|2|0|0|0|0|2|0|1|0|2|0|0|1|0|0|0|1|1|0|0|1|0|0|0|0|0|0|0|1|0|0|0|0|0|2|1|0|1|0|0|1|0|0|0|0|0|1|0|0|1|0|0|0|0|1|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|1|0|0|0|0|0|0|0|2|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1</HistCounts>
+      </HistItem>
+    </Histograms>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">465900</MDI>
+      <MDI key="STATISTICS_MEAN">63570.544513457</MDI>
+      <MDI key="STATISTICS_MINIMUM">5730</MDI>
+      <MDI key="STATISTICS_STDDEV">58130.510879765</MDI>
+      <MDI key="STATISTICS_VALID_PERCENT">100</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="3">
+    <Description>correlation_1km</Description>
+    <Histograms>
+      <HistItem>
+        <HistMin>-1974.58281573499</HistMin>
+        <HistMax>6333.58281573499</HistMax>
+        <BucketCount>483</BucketCount>
+        <IncludeOutOfRange>0</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>1|0|1|0|0|0|0|0|0|0|0|0|0|0|0|2|0|0|0|0|1|0|0|0|0|0|1|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|1|0|0|0|0|0|0|0|1|0|1|0|0|0|1|0|0|0|0|0|1|0|0|1|0|0|0|0|0|2|1|0|1|0|0|0|0|1|0|1|0|0|0|0|0|0|2|1|0|0|0|0|2|1|0|0|0|1|1|0|0|1|1|0|1|2|0|0|0|1|0|0|3|1|0|0|0|0|2|0|0|1|1|1|1|1|1|1|1|2|1|0|1|0|2|1|0|1|1|1|0|0|0|1|1|1|0|0|0|0|1|0|0|0|2|0|0|1|1|1|0|2|2|1|3|4|1|1|3|1|0|5|2|3|0|0|2|3|3|1|1|0|0|3|1|2|1|1|0|2|2|2|1|0|1|1|0|1|2|1|2|2|1|1|1|2|0|3|1|1|0|1|1|2|4|2|1|2|1|1|1|3|6|0|4|1|4|3|2|3|5|2|0|1|0|0|0|1|2|2|1|0|2|2|6|2|3|1|2|3|1|3|4|1|3|3|1|2|2|2|1|2|3|2|1|0|3|1|3|1|4|4|3|3|4|4|1|3|0|2|1|4|2|4|1|4|1|3|1|2|2|3|3|0|3|5|0|4|3|2|0|3|2|0|2|1|3|1|1|3|1|1|3|3|4|3|2|2|0|3|2|3|0|1|1|0|3|1|4|1|2|2|0|1|4|0|0|2|0|2|1|1|1|3|0|2|1|1|2|1|2|0|2|4|0|3|0|1|0|2|0|3|2|2|0|2|2|1|0|2|0|0|1|0|1|1|2|0|0|2|0|2|0|1|0|1|0|1|1|0|0|1|0|2|2|1|3|1|2|0|0|1|2|0|0|1|0|0|1|1|0|0|0|0|0|0|0|0|0|1|2|2|0|1|1|1|0|0|0|1|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|1</HistCounts>
+      </HistItem>
+    </Histograms>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">6325</MDI>
+      <MDI key="STATISTICS_MEAN">2598.4306418219</MDI>
+      <MDI key="STATISTICS_MINIMUM">-1966</MDI>
+      <MDI key="STATISTICS_STDDEV">1555.6840083392</MDI>
+      <MDI key="STATISTICS_VALID_PERCENT">100</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="4">
+    <Description>dissimilarity_1km</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="5">
+    <Description>entropy_1km</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="6">
+    <Description>homogeneity_1km</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="7">
+    <Description>maximum_1km</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="8">
+    <Description>mean_1km</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="9">
+    <Description>pielou_1km</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="10">
+    <Description>range_1km</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="11">
+    <Description>shannon_1km</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="12">
+    <Description>simpson_1km</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="13">
+    <Description>standard_deviation_1km</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="14">
+    <Description>uniformity_1km</Description>
+  </PAMRasterBand>
+  <PAMRasterBand band="15">
+    <Description>variance_1km</Description>
+  </PAMRasterBand>
+</PAMDataset>
