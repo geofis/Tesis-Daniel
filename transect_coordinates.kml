@@ -63,7 +63,7 @@
       <Point><coordinates>-70.51778253,19.03988932</coordinates></Point>
   </Placemark>
   <Placemark>
-	<name>Manaclar_4</name>
+	<name>Manaclar_1</name>
 	<description>Start coordinate</description>
 	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
 		<SimpleData name="id">19.03840638</SimpleData>
@@ -72,7 +72,7 @@
       <Point><coordinates>-70.52811004,19.03840638</coordinates></Point>
   </Placemark>
   <Placemark>
-	<name>Manaclar_4</name>
+	<name>Manaclar_1</name>
 	<description>Final coordinate</description>
 	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
 		<SimpleData name="id">19.03843075595</SimpleData>
@@ -81,7 +81,7 @@
       <Point><coordinates>-70.5282180465,19.03843075595</coordinates></Point>
   </Placemark>
   <Placemark>
-	<name>Manaclar_5</name>
+	<name>Manaclar_2</name>
 	<description>Start coordinate</description>
 	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
 		<SimpleData name="id">19.03907734</SimpleData>
@@ -90,7 +90,7 @@
       <Point><coordinates>-70.53011164,19.03907734</coordinates></Point>
   </Placemark>
   <Placemark>
-	<name>Manaclar_5</name>
+	<name>Manaclar_2</name>
 	<description>Final coordinate</description>
 	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
 		<SimpleData name="id">19.03930838</SimpleData>
@@ -99,7 +99,7 @@
       <Point><coordinates>-70.53025782,19.03930838</coordinates></Point>
   </Placemark>
   <Placemark>
-	<name>Manaclar_6</name>
+	<name>Manaclar_3</name>
 	<description>Start coordinate</description>
 	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
 		<SimpleData name="id">19.03900317</SimpleData>
@@ -108,7 +108,7 @@
       <Point><coordinates>-70.52989807,19.03900317</coordinates></Point>
   </Placemark>
   <Placemark>
-	<name>Manaclar_6</name>
+	<name>Manaclar_3</name>
 	<description>Final coordinate</description>
 	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
 		<SimpleData name="id">19.03903614</SimpleData>
@@ -117,7 +117,7 @@
       <Point><coordinates>-70.53001273,19.03903614</coordinates></Point>
   </Placemark>
   <Placemark>
-	<name>Arroyazo_7</name>
+	<name>Arroyazo_1</name>
 	<description>Start coordinate</description>
 	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
 		<SimpleData name="id">19.03620841</SimpleData>
@@ -126,7 +126,7 @@
       <Point><coordinates>-70.54296244,19.03620841</coordinates></Point>
   </Placemark>
   <Placemark>
-	<name>Arroyazo_7</name>
+	<name>Arroyazo_1</name>
 	<description>Final coordinate</description>
 	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
 		<SimpleData name="id">19.03642805</SimpleData>
@@ -135,7 +135,7 @@
       <Point><coordinates>-70.54266203,19.03642805</coordinates></Point>
   </Placemark>
   <Placemark>
-	<name>Arroyazo_8</name>
+	<name>Arroyazo_2</name>
 	<description>Start coordinate</description>
 	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
 		<SimpleData name="id">19.03632124</SimpleData>
@@ -144,7 +144,7 @@
       <Point><coordinates>-70.54255173,19.03632124</coordinates></Point>
   </Placemark>
   <Placemark>
-	<name>Arroyazo_8</name>
+	<name>Arroyazo_2</name>
 	<description>Final coordinate</description>
 	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
 		<SimpleData name="id">19.03634977</SimpleData>
@@ -153,7 +153,7 @@
       <Point><coordinates>-70.54218091,19.03634977</coordinates></Point>
   </Placemark>
   <Placemark>
-	<name>Arroyazo_9</name>
+	<name>Arroyazo_3</name>
 	<description>Start coordinate</description>
 	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
 		<SimpleData name="id">19.03639826</SimpleData>
@@ -162,7 +162,7 @@
       <Point><coordinates>-70.54209173,19.03639826</coordinates></Point>
   </Placemark>
   <Placemark>
-	<name>Arroyazo_9</name>
+	<name>Arroyazo_3</name>
 	<description>Final coordinate</description>
 	<ExtendedData><SchemaData schemaUrl="#transect_coordinates">
 		<SimpleData name="id">19.03664738</SimpleData>

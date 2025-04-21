@@ -22,6 +22,8 @@ knitr::opts_chunk$set(
 - Cargar paquetes.
 
 ```{r}
+library(terra)
+library(DT)
 library(vegan)
 library(sf)
 library(tidyverse)
@@ -68,6 +70,9 @@ datos <- datos_orig %>%
   group_by(Especies, Abundancia, id) %>% 
   distinct() # Para eliminar registros redundantes
 transect_coords <- read_csv('transect_coordinates.csv') %>% 
+  group_by(Location) %>% 
+  mutate(`Transect number` = row_number()) %>% 
+  ungroup() %>% 
   mutate(id = paste0(Location, '_', `Transect number`)) %>% 
   select(-Location, -`Transect number`, -Elevation) %>% 
   pivot_longer(-id, names_to = 'Coordinate type') %>% 
@@ -236,17 +241,198 @@ acumulacion_especies_grupos
 
 ## Asociación con variables ambientales
 
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡WIP-PENDIENTE!!!!!!!!!!!!!!!!!!!!
+Explorar, aun siendo pocos transectos (en terreno tres transectos por formación es mucho, pero estadísticamente es poco), asociación con variables topográficas/geomorfológicas, cubierta y altura de dosel y elevación.
 
-Retomando idea compartida por correo:
-
-> ...se podría explorar, aun siendo pocos transectos (ya sé que en terreno tres transectos por formación es mucho, pero estadísticamente es poco), asociación con variables geomorfológicas, distancia a cursos fluviales, litología, cubierta y altura de dosel, elevación y variables climáticas. Lógicamente, para esto, sería necesario disponer de las coordenadas de los transectos.
-
-- Estadística zonal
+- Crear polígonos a partir de transectos
 
 ```{r}
+# Creación de segmentos de líneas
+transect_lines_sf <- transect_coords_sf %>%
+    group_by(id) %>%
+    summarise(geometry = st_cast(st_combine(geometry), "LINESTRING"), .groups = "drop")
 
+# Crear polígonos con buffer
+transect_pol_sf_20m <- transect_lines_sf %>%
+  st_transform(32619) %>% 
+  st_buffer(20) %>% 
+  st_transform(4326)
 ```
+
+- Leer rásters
+
+```{r}
+# Ruta a la carpeta que contiene los .tif
+ruta_tifs <- "entradas"
+
+# Leer todos los archivos tif (soporta multibanda automáticamente)
+archivos_tif <- list.files(ruta_tifs, pattern = "\\.tif$", full.names = TRUE) %>% 
+  grep(pattern = paste('cobertura_esa|cobertura_copernicus_2019|geomorfonos',
+                       'formas_del_terreno|worldclim|heterogeneidad',
+                       sep = '|'),
+       invert = T, value = T)
+
+# EPSG deseado
+crs_deseado <- "EPSG:4326"
+
+# Leer y reproyectar si es necesario
+raster_list <- lapply(archivos_tif, function(f) {
+  r <- rast(f)
+  if (crs(r) != crs_deseado) {
+    r <- project(r, crs_deseado, method = 'near')
+  }
+  r
+})
+
+# Leer los polígonos (asegúrate de que estén en EPSG:4326 también)
+poligonos <- transect_pol_sf_20m |> 
+  vect()  # convertir a objeto SpatVector de terra
+
+# Categórico?
+es_categorico <- c(FALSE, FALSE, FALSE, FALSE)
+
+resultados <- Map(function(r, cat) {
+  stat <- if (cat) "modal" else "mean"
+  terra::extract(r, poligonos, fun = stat, na.rm = TRUE, bind = T)
+}, raster_list, es_categorico)
+
+# Añadir nombres basados en los archivos
+names(resultados) <- basename(archivos_tif)
+
+# Atributos
+atributos_extraidos <- lapply(resultados, function(v) {
+  # Obtener solo los atributos adicionales (excluyendo el ID si es redundante)
+  as.data.frame(v)[, , drop = FALSE]  # asume que la primera columna es ID o igual para todos
+})
+
+# Combinar
+foo <- do.call(cbind, atributos_extraidos)
+# Obtener el nombre de la primera columna que termina en 'id'
+columna_id <- grep("id$", names(foo), value = TRUE)[1]
+# Combinar final
+atributos_combinados <-  foo %>% 
+  rename(id = all_of(columna_id)) %>% 
+  rename_with(~ gsub('\\.tif\\.', '__', .x)) %>%
+  rename_with(~ gsub('__discrete_classification', '', .x)) %>% 
+  rename_with(~ gsub('\\.', '_', .x)) %>% 
+  select(-ends_with('__id')) %>% 
+  rename_with(~ gsub('_b1.*', '', .x))
+
+# Uniendo
+env_sf <- poligonos %>%
+  st_as_sf() %>% 
+  inner_join(atributos_combinados)
+
+# Grupos
+env <- env_sf %>% 
+  st_drop_geometry() %>% 
+  column_to_rownames('id')
+env_grupos <- env %>%  
+  mutate(grupos = factor(gsub('_.*$', '', rownames(.)))) %>% 
+  pivot_longer(-c(grupos), names_to = "variable", values_to = "valor")
+
+# Evaluando diferencias
+env_grupos_ak <- env_grupos %>%
+  group_by(variable) %>%
+  summarise(
+    p_valor_a = tryCatch(oneway.test(valor ~ grupos)$p.value, error = function(e) NA),
+    p_valor_k = tryCatch(kruskal.test(valor ~ grupos)$p.value, error = function(e) NA)
+    ) %>%
+  arrange(p_valor_a)
+# env_grupos_ak %>% estilo_kable(alinear = 'crr')
+if(interactive()) {env_grupos_ak %>%
+  datatable(options = list(pageLength = 140, autoWidth = FALSE),
+            filter = 'top',) %>% 
+  formatSignif(columns = "p_valor_a", digits = 1) %>%
+  formatSignif(columns = "p_valor_k", digits = 1)
+}
+env_grupos_ak %>% kableExtra::kable()
+```
+
+
+```{r comment="", fig.width=8, fig.height=11, dpi=250}
+# Graficando
+env_grupos_p <- env_grupos %>% 
+  ggplot() + aes(x = grupos, y = valor, group = grupos, fill = grupos) + 
+  geom_boxplot(lwd = 0.2) + 
+  scale_fill_brewer(palette = 'Set1') +
+  theme_bw() +
+  theme(legend.position="none") +
+  facet_wrap(
+    ~ variable, 
+    scales = 'free_y',
+    ncol = 2,
+    labeller = labeller(
+  variable = function(x) label_wrap_gen(width = 35)(stringr::str_to_title(gsub("_", " ", x))))
+  )
+env_grupos_p
+```
+
+- Ordenación
+
+```{r comment="", fig.width=9, fig.height=9, dpi=300}
+mc_t <- decostand(mc, method = 'hellinger')
+mc_t_ren <- mc_t %>%
+  rename_all(~ paste('ESPECIE', .x))
+env_spp <- env %>% bind_cols(mc_t_ren)
+spp <- paste0('`', grep('^ESPECIE', colnames(env_spp), value = T), '`', collapse = ' + ')
+my_formula <- as.formula(paste(spp, '~ .'))
+set.seed(1); mod <- my_train(
+  formula = my_formula, 
+  # preproceso = 'scale',
+  data = env_spp,
+  num_variables = 3:4)
+print_my_train(mod)
+(covar <- grep(
+  pattern = '\\(Intercept\\)',
+  x = names(coef(mod$finalModel,unlist(mod$bestTune))),
+  invert = T, value = T))
+rda_mc_t <- rda(mc_t_ren %>% rename_all(~ gsub('^ESPECIE ', '', .)) ~ .,
+                    env %>% select_at(all_of(gsub('\\`', '', covar))), scale = T)
+```
+
+A continuación, el resumen del análisis de redundancia.
+
+```{r comment="", fig.width=9, fig.height=9, dpi=300}
+summary(rda_mc_t)
+```
+
+El factor de inflación de la varianza.
+
+```{r comment="", fig.width=9, fig.height=9, dpi=300}
+vif.cca(rda_mc_t)
+```
+
+Represento el gráfico *triplot*.
+
+```{r comment="", fig.width=13, fig.height=13, dpi=150}
+# Triplot
+escalado <- 1
+plot(rda_mc_t,
+     scaling = escalado,
+     display = c("lc", "cn"),
+     main = paste("Triplot de RDA especies ~ variables, escalamiento", escalado)
+)
+rda_mc_t_sc1 <- scores(rda_mc_t,
+         choices = 1:2,
+         scaling = escalado,
+         display = "sp"
+  )
+text(rda_mc_t, "species", col="red", cex=0.8, scaling=escalado)
+arrows(0, 0,
+       rda_mc_t_sc1[, 1] * 0.9,
+       rda_mc_t_sc1[, 2] * 0.9,
+       length = 0,
+       lty = 1,
+       col = "red"
+)
+```
+
+
+
+
+
+
+
 
 ## Scripts heredados
 
