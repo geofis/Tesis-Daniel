@@ -3,6 +3,15 @@ title: "Helechos a mansalva"
 author: "Luis Daniel Fernández Montesinos"
 date: "2025-01-09"
 output: pdf_document
+header-includes:
+  - \usepackage{colortbl}
+  - \usepackage{xcolor}
+  - \usepackage{longtable}
+  - \definecolor{gray}{gray}{0.1}
+  - \usepackage{pdflscape}
+  - \usepackage{float}
+  - \newcommand{\blandscape}{\begin{landscape}}
+  - \newcommand{\elandscape}{\end{landscape}}
 ---
 
 ```{r setup, include=FALSE}
@@ -44,6 +53,7 @@ library(SpadeR)
 library(iNEXT)
 library(GGally)
 library(vegetarian)
+library(ggrepel)
 gh_content <- 'https://raw.githubusercontent.com/'
 gh_zonal_stats <- paste0(gh_content,
                          'geofis/zonal-statistics/0b2e95aaee87bf326cf132d28f4bd15220bb4ec7/out/')
@@ -267,7 +277,7 @@ ruta_tifs <- "entradas"
 # Leer todos los archivos tif (soporta multibanda automáticamente)
 archivos_tif <- list.files(ruta_tifs, pattern = "\\.tif$", full.names = TRUE) %>% 
   grep(pattern = paste('cobertura_esa|cobertura_copernicus_2019|geomorfonos',
-                       'formas_del_terreno|worldclim|heterogeneidad',
+                       'formas_del_terreno|worldclim|heterogeneidad', 'MG_6073',
                        sep = '|'),
        invert = T, value = T)
 
@@ -360,12 +370,24 @@ env_grupos_p <- env_grupos %>%
   facet_wrap(
     ~ variable, 
     scales = 'free_y',
-    ncol = 2,
+    ncol = 5,
     labeller = labeller(
   variable = function(x) label_wrap_gen(width = 35)(stringr::str_to_title(gsub("_", " ", x))))
   )
+# env_grupos_p
+# Graficar
+jpeg('salidas/env_grupos_p.jpg', width = 4000, height = 2000, res = 250)
 env_grupos_p
+dev.off()
 ```
+
+\blandscape
+
+```{r env_grupos_p, echo=FALSE, fig.cap="Variables ambientales por grupos"}
+knitr::include_graphics("salidas/env_grupos_p.jpg")
+```
+
+\elandscape
 
 - Ordenación
 
@@ -427,11 +449,85 @@ arrows(0, 0,
 )
 ```
 
+- Triplot con ggplot2
 
+```{r}
+# Extraer coordenadas
+escalado <- 1
+scores_rda <- scores(rda_mc_t, scaling = escalado)
 
+# Sitios (lc: linear combinations)
+sitios <- as_tibble(scores_rda$sites, rownames = "Sitio")
 
+# Variables explicativas (cn: canonical axes)
+variables <- as_tibble(scores_rda$biplot, rownames = "Variable")
 
+# Estimar máximo de los sitios
+max_sitios <- max(abs(c(sitios$RDA1, sitios$RDA2)))
 
+# Estimar máximo de vectores
+max_vectores <- max(abs(c(variables$RDA1, variables$RDA2)))
+
+# Escalar vectores para que quepan proporcionalmente
+escala_vectores <- max_sitios / max_vectores * 0.9
+
+# Renombrar
+variables <- variables %>%
+  mutate(across(c(RDA1, RDA2), ~ . * escala_vectores)) %>% 
+  mutate(Variable = case_when(
+    Variable == "geomorpho90m_topografia_stack__Stream_Power_Index" ~ "Stream Power Index",
+    Variable == "hansen_pct_cobertura_2000_treecover2000__treecover2000" ~ "Tree Cover 2000",
+    Variable == "wri_meta_canopy_height__cover_code" ~ "Canopy Height",
+    TRUE ~ Variable
+  ))
+
+# Especies (sp: species scores)
+especies <- as_tibble(scores(rda_mc_t, display = "species", scaling = escalado), rownames = "Especie")
+
+# Gráfico base
+triplot_ggplot <- ggplot() +
+  # Sitios
+  geom_point(data = sitios, aes(x = RDA1, y = RDA2), color = "black") +
+  geom_text(data = sitios, aes(x = RDA1, y = RDA2, label = Sitio), hjust = 0.5, vjust = -0.5, size = 3) +
+
+  # Especies
+  # geom_text(data = especies,
+  #           aes(x = RDA1, y = RDA2, label = Especie),
+  #           color = "red", size = 3) +
+  geom_text_repel(data = especies,
+                  aes(x = RDA1, y = RDA2, label = Especie),
+                  color = "red", size = 3, max.overlaps = 50) +
+
+  # Variables ambientales
+  geom_segment(data = variables,
+               aes(x = 0, y = 0, xend = RDA1, yend = RDA2),
+               arrow = arrow(length = unit(0.2, "cm")),
+               color = "blue", linewidth = 0.6) +
+  geom_text(data = variables,
+            aes(x = RDA1, y = RDA2, label = Variable),
+            color = "blue", hjust = 0.5, vjust = -0.5, size = 3) +
+
+  # Ejes
+  geom_hline(yintercept = 0, linetype = "dotted") +
+  geom_vline(xintercept = 0, linetype = "dotted") +
+  labs(title = paste("RDA, triplot species ~ variables, scaling", escalado),
+       x = "RDA1", y = "RDA2") +
+  coord_equal() +
+  theme_minimal()
+
+# Graficar
+jpeg('salidas/triplot_ggplot.jpg', width = 3000, height = 3000, res = 350)
+triplot_ggplot
+dev.off()
+```
+
+\blandscape
+
+```{r triplot_ggplot, echo=FALSE, fig.cap="Triplot en ggplot"}
+knitr::include_graphics("salidas/triplot_ggplot.jpg")
+```
+
+\elandscape
 
 
 ## Scripts heredados
